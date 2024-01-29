@@ -1,6 +1,11 @@
 <div class="books index">
   <h2>Book Collection</h2>
-
+  <% if flash[:notice].present? %>
+    <div class="notice">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+  <hr>
   <%= link_to("Add New book", new_book_path, class: 'action new') %>
 
   <table class="listing" summary="book list" style="width: 100%;">
@@ -20,4 +25,5 @@
     </tr>
     <% end %>
   </table>
+  
 </div>
