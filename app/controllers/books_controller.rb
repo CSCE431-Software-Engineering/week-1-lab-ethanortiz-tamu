@@ -22,6 +22,7 @@ class BooksController < ApplicationController
       # The 'new' action is NOT being called here
       # Assign any instance variables needed
       # @count = Book.count
+      flash[:notice] = 'Title can\'t be blank'
       render('new')
     end
   end

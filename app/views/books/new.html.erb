@@ -2,6 +2,11 @@
 
 <div class="books new">
   <h2>Create book</h2>
+  <% if flash[:notice].present? %>
+    <div class="notice">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
 
   <%= form_for(@book) do |f| %>
     <% # url: books_path, method: 'post' %>
@@ -9,7 +14,7 @@
     <%= render(partial: 'form', locals: {f: f}) %>
 
     <div class="form-buttons">
-      <%= f.submit("Create book") %>
+      <%= f.submit("Create book", id: 'Create Book') %>
     </div>
 
   <% end %>
